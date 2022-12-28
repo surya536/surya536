@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+	<div class="course-block block liquid_html  " id="block-13704123">
+      
+
+        <!-- if no liquid block data saved we render a default state -->
+
+<style>
+  .blank-template-body {
+  color: #36414D;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  opacity: 0.6;
+  width: 750px;
+  text-align: left;
+  }
+</style>
+<section>
+<iframe style="height: 600" width="1300" src="https://mmumshad.github.io/ansible-practice-quizzes/index.html#!/?questions=questions_yaml"><p>Your browser does not support iframes.</p></iframe>
+</section>
+
+<script>
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+    
+    var scenario = getUrlVars()["scenario"];
+    console.log(scenario)
+    
+    $('section').append('<iframe style="height: 90vh" width="1500" src="https://mmumshad.github.io/ansible-practice-quizzes/index.html#!/?questions='+ scenario +'"><p>Your browser does not support iframes.</p></iframe>');
+
+</script>
+</div>
+	</body>
+</html>
