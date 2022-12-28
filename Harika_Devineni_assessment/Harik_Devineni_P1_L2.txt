@@ -1,0 +1,57 @@
+import java.util.*;
+public class Main {
+
+    public static boolean isPrime(int num) {    
+        for(int i = 2; i <= num/i; ++i) {
+            if(num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isAscending(int num) {
+        boolean flag = false;
+        int currentDigit = num % 10;
+         num = num/10;
+            while(num>0){
+                if(currentDigit <= num % 10){
+                    flag = true;
+                    break;
+                    }
+                currentDigit = num % 10;
+                num = num/10;
+            }
+            return flag;
+    }
+
+    
+
+    public static void main(String[] args) {
+    	Scanner sc=new Scanner(System.in);
+        int count =0;
+        int count1 =0;
+        int count2 =0;
+        int sum=0;
+        int min = 1;
+        int max;
+        max=sc.nextInt();
+        int array[] = new int[max];
+        for(int n=min;n<=max;n++) {
+            if(isPrime(n)) {
+                sum +=n;
+                array[count]=sum;
+                count++;
+            }
+        }
+         for(int i=0;i<max;i++)
+         {
+             if(isAscending(array[i]))
+             count1++;
+          
+         }
+         System.out.println();
+         System.out.println("Count of Ascending "+count1);
+
+    }
+}

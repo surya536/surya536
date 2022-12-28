@@ -1,0 +1,47 @@
+import java.util.*;
+ class l3{
+public static void main(String[] args) {
+Scanner sc=new Scanner(System.in);
+int m=sc.nextInt();
+		int ca=0, cd=0,cn=0;
+		for(int i=1;i<=m;i++){
+			if(m>9 && m<100){
+				int r=i%10;
+				int q=i/10;
+				if(r>q)
+					ca++;
+				else if(q>r)
+					cd++;
+				
+				else
+
+					cn++;
+				
+			}
+			else if(m>99 && m<1000){ 
+				int r=i%100;
+				int q=i/100;
+				int r2=r%10;
+				int q2=r/10;
+				if(r2>q2 && q2>q)
+				
+					ca++;
+		
+				else if(q>q2 && q2>r2)
+					
+					cd++;
+				
+				else
+					cn++;
+				
+			}
+			
+				
+			else
+                            System.out.println("range exceeded");
+
+		}
+		 System.out.println(cd);
+		
+	}
+}
