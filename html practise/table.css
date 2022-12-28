@@ -1,0 +1,32 @@
+table
+{
+    background-color:black;
+    color:cadetblue;
+border:10px inset;
+padding:20px;
+margin-left:400px;
+margin-top: 50px;
+width:50%;
+}
+tr,th,td{
+    border:1px solid;
+    padding:10px;
+    text-align:center;
+    text-transform: capitalize;
+    
+}
+tr{
+    background:aqua;
+}
+
+caption
+{
+    color:crimson;
+    font-size:20px;
+text-decoration: underline;
+text-transform: upper;
+}
+.fline{
+    background:yellow;
+    color:brown;
+}

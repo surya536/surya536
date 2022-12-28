@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form style="border:1px solid;width:30%;padding:40px;margin-left:300px;margin-top:100px;">
+        <label>enter Id </label>
+
+        <input type='text' name='id' required pattern="[0-9]{5}">
+        <br>
+        <label>enter password</label>
+        <input name="pass" type="password" required>
+        <br>  
+        <label>enter name</label>
+        <input name="name" type="text" pattern="[a-z]{5,10} ">
+    
+        <br>
+ <label>enter age</label>
+ <input name="age" type="number">
+ <br>
+ <label>enter gender</label>
+ <input name="gender" type="radio" value="male">Male
+ <input name="gender" type="radio" value="male">female
+ <br>
+<label> select domain</label>
+<input type="checkbox" value="java">java
+<input type="checkbox" value="mysql">mysql
+<input type="checkbox" value="python">python<br>
+
+ <label>enter date of birth</label>
+ <input name="dob" type="date" autofocus=autofocus>
+ <br>
+ <label>enter time</label>
+ <input name="time" type="time">
+ <br>
+ <label>enter date and time</label>
+ <input name="time" type="datetime-local">
+ <br>
+ <label>enter email</label>
+ <input name="email" type="email" required multiple>
+ <br>
+ <label>enter company name</label>
+ <select name='cname'>
+ <option value="tcs">tcs</option>
+ <option value="wipro">wipro</option>
+ <option value="capgemini">capgemini</option>
+</select>
+<br>
+<label>enter state name</label>
+ <select name="state" multiple>
+ <option value="telangana">telangana</option>
+ <option value="karnataka">karnataka</option>
+ <option value="maharashtra">maharashtra</option>
+</select>
+
+<br>
+ <label>enter city name</label>
+ <input name="city" type="text" list="citylist">
+ <datalist id="citylist">
+     <option value="delhi"></option>
+     <option value="chennai"></option>
+     <option value="hyd"></option>
+     <option value="lucknow"></option>
+     <option value="kashi"></option>
+ </datalist>
+ <br>
+
+<label>select color</label>
+ <input type="color">
+ <br>
+ <label>select range</label>
+ <input type="range" max="40" min ="30">
+ <br>
+ <label>enter url of document</label>
+ <input type="url">
+ <br>
+ <label>upload document</label>
+ <input type="file">
+ <br>
+ <label>add comments </label>
+ <br>
+ <textarea cols="25" rows="5">
+     write comment
+ </textarea>
+ <br>
+ 
+
+
+ <input type="submit" value="login">
+ <input type="reset">
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+h1 {
+    background: blanchedalmond; 
+    color: cadetblue;
+    width: 40%;
+    float: center;
+}
+
+p {
+    text-align:center;
+    text-transform: uppercase;
+}
+div{
+    border:1px solid;
+    width:50%;
+    margin-left:200px;
+    margin-top:30px;
+    padding:20px;
+    background:cornsilk;
+}
