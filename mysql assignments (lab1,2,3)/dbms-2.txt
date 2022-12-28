@@ -1,0 +1,122 @@
+-- 1. get the firstName, lastname, jobtitle for all employees
+select firstname,lastname,jobtitle from employees;
+
+/*2. Print the products from highest to lowerst buyprice*/
+select buyprice from products order by buyPrice desc; 
+
+
+/*3. Print lastname , firstname from customers in DESC order
+of their Last Name and ASC Order in First name from Customers*/
+select contactlastname,contactfirstname from customers order by contactLastName desc,contactfirstname asc;
+
+
+/*4. Print the orders which is than 150 from orderdetails
+Order it from highest to lowest in price*/
+select ordernumber from orderdetails where priceeach>150 order by priceeach desc;
+
+
+/*5. Print Firstname, lastname, jobtitle of Emp
+whose jobtitle is President*/
+select firstname,lastname,jobtitle from employees where jobtitle='president';
+
+/*6. Print Firstname, lastname, jobtitle of Emp
+whose jobtitle is Sales Rep OR office code is 1
+and Order it by the office code and job title*/
+select firstname,lastname,jobtitle from employees where jobtitle='sales rep' or officecode=1 order by officeCode,jobTitle;
+
+
+/*7. List employees who locate in offices whose office code is 
+from 1 to 3*/
+select employeenumber from employees where officecode in(1,2,3);
+
+/*8. Find all Emp who reports to Patterson (lastname) who is
+a 'Sales Manager (APAC)' 
+Use sub query*/
+select employeenumber from employees where(select reportsto from employees where lastname like 'patterson' and jobtitle='Sales Manager (APAC)' );
+
+
+
+/*9. List customers whose contactLast name ends with 'el'*/
+select customernumber,contactlastname  from customers where contactlastname like '%el';
+
+
+/*10. List the employees who are located in offices 
+in NYC and LONDON*/
+select e.employeenumber,o.city from employees e,offices o where e.officecode=o.officecode and o.city in('NYC','London');
+
+
+/*11. List emp who does not report to anyone*/
+SELECT employeenumber from employees where reportsTo IS NULL;
+
+/*12. Find all emp who are not Sales Rep*/
+select employeenumber from employees where jobtitle!='sales rep';
+
+
+/*13. Print all the unique lastname from the emp table*/
+select distinct(lastname) from employees;
+
+
+/*14. Get unique states from customer*/
+select distinct(state) from customers;
+
+
+/*15. Get all the count of orders based on the order status*/
+select count(ordernumber),status from orders group by status;
+
+
+/*16. List the different order status present*/
+select distinct(status) from orders;
+
+
+/*17. Print the OrderNumber and the total amount of each order
+Total amt= QtyOrdered * priceEach*/
+select ordernumber,(quantityordered*priceeach) as totalamount from orderdetails;
+
+/*18. Print the year and the count of orders
+Ex: 
+YEAR  Count
+2003  111
+*/
+select year(orderdate) as year,count(ordernumber) as count from orders group by year(orderdate);
+
+
+/*19. List customers who has the maximum payment*/
+select customernumber,max(amount) from payments;
+
+
+/*20. List customers whose payments are greater than the average payment*/
+select distinct(customernumber) from payments where amount>(select avg(amount) from payments);
+
+/*21. List customers who have not placed any orders*/
+select customerName from customers  where customerNumber in (select c.customerNumber from customers c, orders o where c.customerNumber != o.customerNumber);
+
+/*22. Find the maximum, minimum and average number of items in sale order*/
+select productcode, max(quantityordered),min(quantityordered),avg(quantityordered) from orderdetails group by productcode;
+
+
+/*23. Find sales orders whose total values are greater than 60k
+Output: 
+OrderNumber   totoal
+10120          3423.85*/
+
+/*24. Update the email id of Mary Patterson to new email
+mary.patterso@classicmodelcars.com*/
+update employees set email='mary.patterso@classicmodelcars.com' where firstname='mary' and lastname='patterson';
+
+
+/*25. Update the domain parts of emails of all Sales Rep with office code 6 with
+@skillassure.org*/
+update employees set email=replace(email,'@classicmodelcars.com','@skillassure.org')where jobtitle='sales rep' and officecode=6;
+
+
+/*26. Get Order numbers, the number of items sold per order, and 
+total sales for each from the orderdetails table*/
+select ordernumber,count(productcode) as no_of_itemssoldperorder,sum(quantityordered*priceeach) as totalsales from orderdetails group by ordernumber;
+
+/*27. Get orders that have total amounts greater than 1500 and 
+contain more than 600 items using Having clause*/
+select ordernumber   from orderdetails group by ordernumber having sum(quantityordered)>=600 and sum(quantityordered*priceeach)>=1500;
+
+
+
+

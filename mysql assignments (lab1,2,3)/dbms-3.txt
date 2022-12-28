@@ -1,0 +1,108 @@
+ Hearthealth DB
+
+-- 1.Get all the predictions 
+ select cardioarrestdetected from cardiodiagnosis;
+
+-- 2Get all the predictions for the day
+select date,cardioarrestdetected from cardiodiagnosis group by date;
+
+--3. Get all the predictions for the day and sort it
+-- based on highest percentage of probability at the top
+select date,cardioarrestdetected from cardiodiagnosis group by date order by cardioarrestdetected desc;
+
+--4. Get all the unique cities
+select distinct(city) from addressinfo order by city;
+
+--5. Get all the members who are from a city - 'Burgos'
+select firstname,lastname  from addressinfo,memberinfo where addressinfo.city= 'Burgos' and memberinfo.member_id=addressinfo.memberinfo_member_id;
+
+
+--6. Get all the members who are from 'flora' city
+select firstname,lastname  from addressinfo,memberinfo where addressinfo.city= 'flora' and member_id=memberinfo_member_id;
+
+
+
+--7. Get the total number of bloodtests done for Aisha
+select count(blood_id) as no_of_bloodtests_done from bloodtest ,cardiodiagnosis ,memberinfo where cardiodiagnosis_cardio_id=cardio_id and memberinfo_member_id
+=member_id and firstname='aisha';
+
+
+--8. Get the xray details of Ajay whose cardio was done on 26th of Jan 2019
+select * from xray x,cardiodiagnosis,memberinfo where cardio_id=cardiodiagnosis_cardio_id and cardiodiagnosis.date='2019-01-26' and firstname='ajay';
+
+--9. Create a Stored Procedure to get the details (firstname, lastname, age) of the members by just passing the member_id as a parameter.
+delimiter &&
+create procedure select_details (in member_id varchar(45))
+begin
+select firstname,lastname,age from memberinfo;
+end &&
+delimiter ;
+call select_details('M212');
+
+--10. Create a Stored Procedure to insert the details of the any new member by just passing the details as parameters.
+create procedure insert_details(in m_member_id varchar(45), in m_username varchar(45),in m_firstname varchar(45),
+in m_lastname varchar(45),in m_age int,in m_gender varchar(45),in m_email varchar(45),in m_phonenumber bigint )
+begin
+insert into memberinfo values(m_member_id,m_username,m_firstname,m_lastname,m_age,m_gender,m_email,m_phonenumber);
+end &&
+delimiter ;
+call insert_details('123','abc469','harika','devineni',20,'female','abc@gmail.com',850021456);
+
+--11. Create a Stored Procedure to get the X-ray report of the patient, based on their name and the date of cardiac test done.
+
+--12. Create a Stored procedure which would return the count of the patients based on the data stored in the database. 
+Pass the parameter to get count of patients who are predicted or who are safe from getting a heart attack.
+
+delimiter &&
+create procedure get_countofpatients(inout var int)
+begin
+select count(memberinfo_member_id) from cardiodiagnosis; 
+select memberinfo_member_id from cardiodiagnosis where cardioarrestdetected=var;
+end &&
+delimiter ;
+
+set @m=0;
+call get_countofpatients(@m);
+
+-- 13.Write a stored procedure to create a memberinfo
+-- 14.Create a stored procedure to add member address
+
+
+-- 15.Get all the members who are from city burgos, flora and
+select  firstname,lastname,memberinfo_member_id from addressinfo,memberinfo where addressinfo.memberinfo_member_id=memberinfo.member_id
+and addressinfo.city in ('flora','burgos'); 
+
+
+--16. Get the total number of bloodtests done for aberson
+select count(blood_id) as no_of_bloodtests_done from bloodtest ,cardiodiagnosis ,memberinfo where cardiodiagnosis_cardio_id=cardio_id and memberinfo_member_id
+=member_id and lastname='aberson';
+
+
+-- 17.Get all address details for member ID M304
+select * from addressinfo where memberinfo_member_id='M304';
+
+-- 18.Get all xray details for cardio id cid 122
+select * from xray  where cardiodiagnosis_cardio_id='cid122';
+
+
+--19. Create a stored procedure to get member name of member_id - M304
+delimiter &&
+create procedure get_membername()
+begin
+select  firstname from memberinfo where member_id='M304';
+end &&
+delimiter ;
+call get_membername();
+
+
+--20. Create a stored procedure to get city name of member_id - M304
+delimiter &&
+create procedure get_cityname()
+begin
+select  city from addressinfo where memberinfo_member_id='M304';
+end &&
+delimiter ;
+call get_cityname();
+
+
+

@@ -1,0 +1,156 @@
+-- 1. To get the list of customers in the database
+select customerid,shortname from customermaster;
+
+-- 2. To get the list of orders in the database
+select OrderId from orderitems;
+
+-- 3. To get the list of regions in the database
+select RegionCode from customermaster;
+
+-- 4. To get the list of orders for customer 1631
+select orderid from orderreg where customerid=1631;
+
+-- 5. To get the list of customers for the region BA, CH, MU, PU
+select customerid from customermaster where RegionCode in ('BA','CH','MU','PU');
+
+-- 6. To get the list of orders for the year 2005
+select orderid from orderreg where orderdate between '2005-01-01' and '2005-12-31';
+
+-- 7. To get the list of invoices for the year 2005 and for the customer 961
+select invoiceid from invoice where customerid=961 or invoicedt between  '2005-01-01' and '2005-12-31' 
+
+-- 8. To get the list of customers whose name begins with T
+select shortname from customermaster where shortname like 'T%';
+
+-- 9. To get the list of invoices either for the customer 1631 or for the month
+-- March 2005
+select invoiceid from invoice where customerid=1631 or invoicedt between  '2005-03-01' and '2005-03-31';
+
+-- 10. To get the total number of customers in the database
+select count(customerid) from customermaster;
+
+-- 11. To get the total number of orders for the customer 1631 for the year 2006
+select count(orderid) from orderreg where customerid=1631 and orderdate between '2006-01-01' and '2006-12-31';
+
+-- 12. To get the total order value of the database
+select sum(rate) as totalordervalueofdatabase from orderitems;
+
+-- 13. To get the total sales value of the database for the customer 961
+select sum(OriginalAmount) from payments where InvoiceId = (select InvoiceId from invoice where CustomerId = '961');
+
+-- 14. To get the total outstanding amount of the database
+select sum(outstandingamount) from payments;
+
+-- 15. To get the total number of customers for each region [RegionCode, CustomerCount]
+select regioncode,count(customerid) as customercount from customermaster group by regioncode;
+
+-- Top 3 regions with highest customer count
+
+-- 16. To get the total number of orders for each customer id [CustomerId, OrderCount]
+select customerid,count(orderid) as ordercount from orderreg group by customerid; 
+
+-- 17. To get the total sales value for each customer id [CustomerId, SalesValue]
+ select customerid,count(OriginalAmount) as ordercount from payments p,invoice i where p.InvoiceId = i.InvoiceId group by customerid;
+
+-- 18. To get the total sales value for each customer in the year 2005
+ select ShortName,count(OriginalAmount) as ordercount from payments p,invoice i , customermaster c where p.InvoiceId = i.InvoiceId and c.CustomerId = i.CustomerId group by ShortName;
+
+-- 19. To get the list of orders with its customer information
+-- OrderId, OrderDate, CustomerId, CustomerName, RegionCode
+select o.orderid,o.orderdate,c.customerid,c.shortname,c.regioncode from orderreg o,customermaster c where c.customerid=o.customerid;
+
+-- 20. List of all invoices with their order information 
+-- (InvoiceId, InvoiceDate, InvoiceTotal, OrderId, OrderDate)
+select i.invoiceid,i.invoicedt,i.invoicetotal,ore.orderdate,ore.orderid from invoice i,orderreg ore where i.orderid=ore.orderid;
+
+-- 21. List of all invoices with their payment information
+-- (InvoiceId, InvoiceDate, InvoiceTotal, PaidAmount, OutstandingAmount)
+select i.invoiceid,i.invoicedt,i.invoicetotal,p.paidamount,p.outstandingamount from invoice i,payments p where i.invoiceid=p.invoiceid;
+
+-- 22. List of all the orders for the year 2006 with their customer information
+-- (OrderId, OrderDate, CustomerId, CustName, RegionCode)
+select o.orderid,o.orderdate,c.customerid,c.shortname,c.regioncode from orderreg o,customermaster c where c.customerid=o.customerid and orderdate between '2006-01-01' and '2006-12-31';
+
+-- 23. Item with or without order information
+-- (ItemNo, LstPrice, MarketingFactor, Rate, Qty, Total)
+select p.itemno,p.listprice,p.marketingfactor,o.rate,o.qty,o.total from productmaster p,orderitems o where p.itemno=o.itemno;
+
+-- 24. Customers with or without order information
+-- (CustomerId, CustName, RegionCode, OrderId, OrderDate)
+select c.customerid,c.shortname,c.regioncode,o.orderid,o.orderdate from customermaster c ,orderreg o where c.customerid=o.customerid;
+
+-- 25. Customer information with their invoice and payment information
+-- (CustomerId, CustName, RegionCode, InvoiceId, InvoiceTotal, PaidAmount, OutstandingAmount)
+
+select c.customerid,c.shortname,c.regioncode, i.invoiceid,i.invoicetotal,p.paidamount,p.outstandingamount from customermaster c,
+invoice i,payments p where c.customerid=i.customerid and i.invoiceid=p.invoiceid;
+
+-- 26. Customer information with their orders, with or without invoice and payment information
+-- (CustomerId, CustName, RegionCode, OrderId, OrderDate, 
+-- InvoiceId, InvoiceTotal, PaidAmount, OutstandingAmount)
+select c.customerid,c.shortname,c.regioncode,ore.orderid,ore.orderdate,i.invoiceid,i.invoicetotal,p.paidamount,p.outstandingamount from customermaster c,
+orderreg ore,payments p,invoice i where c.customerid=ore.customerid and ore.customerid=i.orderid and i.invoiceid=p.invoiceid ;
+
+
+
+-- 27. Orders with its item information
+-- (OrderId, OrderDate, ItemNo, ListPrice, MarketingFactor, Rate, Qty, Total)
+select oi.orderid,o.orderdate,p.itemno,p.listprice,p.marketingfactor,oi.rate,oi.qty,oi.total from orderitems oi,orderreg o,
+productmaster p where oi.orderid=o.orderid and oi.itemno=p.itemno;
+
+
+-- 28. Total number of orders for each region
+-- (RegionCode, OrderCount)
+select count(ore.orderid) as ordercount,cm.regioncode from orderreg ore,customermaster cm where cm.customerid=ore.customerid group by regioncode;
+
+
+-- 29. The total invoice value for each region in the database
+-- (RegionCode, InvoiceValue)
+select count(i.invoicetotal) as invoicevalue,cm.regioncode from customermaster cm,invoice i where cm.customerid=i.customerid group by regioncode;
+
+-- 30. Total order value for each customer
+-- (CustomerId, CustName, OrderValue)
+select c.customerid,c.shortname as custname,oi.total as ordervalue from customermaster c,orderitems oi ,orderreg ore where c.customerid=ore.customerid and 
+ore.orderid=oi.orderid group by c.customerid;
+
+-- 31. Total order value, invoice value and collections value for each customer
+-- in the database
+-- CustomerId, CustomerName, OrderValue, InvoiceValue, CollectionsValue
+
+
+
+
+-- 32. Monthly sales report for the year 2006
+-- MonthName, InvoiceValue
+select monthname(invoicedt) month,invoicetotal as invoicevalue from invoice where year(invoicedt)='2006' group by monthname(invoicedt) ;
+
+-- 33. Yearly Sales report for the customer 1631
+-- Year InvoiceValue
+select year(invoicedt) ,invoicetotal as invoicevalue from invoice where customerid=1631 group by year(invoicedt);
+
+-- 34. Region with the highest CollectionsValue
+-- RegionCode, CollectionsValue
+
+-- 35. To get the list of orders for the customer PRS using subquery
+select o.orderid as listoforders from orderreg o where o.customerid=(select c.customerid from customermaster c where 
+c.shortname='PRS');
+
+-- 36. Total number of orders in the database for each customer using subquery
+select count(orderid) as totalnooforders from orderreg o where o.customerid in (select c.customerid from customermaster c) group by o.customerid;
+
+-- 37. Customer with their sales value and collections value using subquery
+
+-- 38. Orders for the customers belonging to the reigon 'BA' using subquery
+select orderid from orderreg o where o.customerid in (select c.customerid from customermaster c where c.regioncode='BA');
+
+
+-- 39. To check the list of items which do not have an order - using PREDICATE (EXISTS 
+--		ItemNo, ListPrice, MarketingFactor
+select Itemno,ListPrice,MarketingFactor from productmaster pr
+ where  exists 
+ (select pr.ItemNo from productmaster pr,orderitems oi where  pr.ItemNo != oi.ItemNo); 
+
+
+-- 40. Order Total for each region in the database using joins
+select total as ordertotal,customermaster.regioncode from orderitems  inner join orderreg on orderitems.orderid=orderreg.orderid 
+inner join customermaster on orderreg.customerid=customermaster.customerid group by regioncode;
