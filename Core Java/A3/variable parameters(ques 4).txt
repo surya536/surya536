@@ -1,0 +1,19 @@
+package corejava;
+
+public class variableparameterlists {
+	
+	public static void displayPassengers(int x,String...varargs) {
+		for(int i=0;i<varargs.length;i++)
+		System.out.println(varargs[i]);	
+	}
+	
+	public static void main(String[] args) {
+		
+		String[]passengers= new String[]{"Rama","Laxmana","Bharatha","shatrugna"};
+		displayPassengers(1,"Rama","Laxmana","Bharatha","shatrugna");
+		displayPassengers(2,passengers);
+		
+}
+
+	
+}

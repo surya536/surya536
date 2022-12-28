@@ -1,0 +1,33 @@
+package corejava;
+
+public class rectangle extends shape {
+	double width;
+	double height;
+	
+	void draw()
+	{
+	setHeight(height);
+	setWidth(width);
+	setColor(color);
+	double area=getHeight()*getWidth();
+	System.out.println("rectangle filled with "+getColor()+" and area = "+area);
+	
+	}
+	public double getWidth() {
+		return width;
+	}
+	public void setWidth(double width) {
+		this.width = width;
+	}
+	public double getHeight() {
+		return height;
+	}
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	public rectangle(String color, double width, double height) {
+		super(color);
+		this.width = width;
+		this.height = height;
+	}
+}

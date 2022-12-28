@@ -1,0 +1,22 @@
+package corejavaassignment;
+
+import java.util.Comparator;
+import java.util.TreeSet;
+
+public class sortbalance implements Comparator<accountTree> {
+
+	@Override
+	public int compare(accountTree a1, accountTree a2) {
+		// TODO Auto-generated method stub
+		return a1.getBalance()-a2.getBalance();
+	}
+
+	void createset(TreeSet<accountTree> ts)
+	{
+	ts.add(new accountTree(1,"harika",24000));
+	ts.add(new accountTree(5,"dolly",20000));
+	ts.add(new accountTree(4,"pranathi",39000));
+	ts.add(new accountTree(2,"prathyusha",45000));
+	ts.add(new accountTree(3,"sravani",55000));
+	}
+}

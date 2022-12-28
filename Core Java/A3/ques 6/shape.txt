@@ -1,0 +1,16 @@
+package corejava;
+
+public abstract class shape {
+String color;
+abstract void draw();
+public String getColor() {
+	return color;
+}
+public void setColor(String color) {
+	this.color = color;
+}
+public shape(String color) {
+	super();
+	this.color = color;
+}
+}

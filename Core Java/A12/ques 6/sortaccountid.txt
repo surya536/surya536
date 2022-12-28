@@ -1,0 +1,25 @@
+package corejavaassignment;
+import java.util.*;
+
+ class sortaccountid implements Comparator<accountTree>{
+	
+		@Override
+	public int compare(accountTree a1, accountTree a2) 
+		{
+		return a1.getAccountId()-a2.getAccountId();
+		
+	}
+		void createset(TreeSet<accountTree> ts)
+		{
+		ts.add(new accountTree(1,"harika",24000));
+		ts.add(new accountTree(5,"dolly",20000));
+		ts.add(new accountTree(4,"pranathi",39000));
+		ts.add(new accountTree(2,"prathyusha",45000));
+		ts.add(new accountTree(3,"sravani",55000));
+		}
+		
+
+
+	
+	
+}

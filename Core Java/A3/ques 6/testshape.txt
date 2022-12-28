@@ -1,0 +1,13 @@
+package corejava;
+
+public class testshape {
+public static void main(String[] args) {
+	rectangle r=new rectangle("pink",20,30);
+	circle c=new circle("red",4);
+	square s=new square("yellow",4,4);
+	r.draw();
+	c.draw();
+	s.draw();
+	
+}
+}

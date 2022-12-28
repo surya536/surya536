@@ -1,0 +1,63 @@
+package corejavaassignment;
+import java.util.*;
+
+public class sortaccount {
+	public static void main(String[] args) {
+System.out.println("1.Sort Account Id");
+System.out.println("2.Sort Account Name");
+System.out.println("3.Sort Account Balance");
+System.out.println("please choose any one from above options");
+	
+		int choice;
+		Scanner sc=new Scanner(System.in);
+		choice=sc.nextInt();
+	
+		switch(choice)
+		{
+		case 1:
+			sortaccountid si=new sortaccountid();
+			TreeSet<accountTree> ts2=new TreeSet<accountTree>(si);
+			si.createset(ts2);
+			System.out.println("sorting according to account id............");
+			for(accountTree a:ts2)
+				System.out.println(a);
+			break;
+			
+			
+		case 2:
+			sortname sn=new sortname();
+			TreeSet<accountTree> ts1=new TreeSet<accountTree>(sn);
+			sn.createset(ts1);
+			System.out.println("sorting according to account name............");
+			for(accountTree a:ts1)
+				System.out.println(a);
+			break;
+			
+			
+		case 3:
+			sortbalance sb=new sortbalance();
+			TreeSet<accountTree> ts=new TreeSet<accountTree>(sb);
+			sb.createset(ts);
+			System.out.println("sorting according to account balance............");
+			for(accountTree a:ts)
+				System.out.println(a);
+			break;
+
+                default:
+				System.out.println("invalid input");
+			
+			
+		}
+		
+		
+	
+		
+
+
+	
+				
+		
+	
+	}
+
+}

@@ -1,0 +1,42 @@
+package corejavaassignment;
+import java.util.*;
+
+public class setdemo {
+	
+	
+	public static void main(String[] args) {
+		
+	
+	Set<String> set1=new HashSet<String>();
+	Set<String> set2=new HashSet<String>();
+
+	
+set s=new set();
+s.create(set1,set2);
+s.display(set1, set2);
+
+s.create(set1, set2);
+s.intersection(set1, set2);
+
+
+s.create(set1,set2);
+s.union(set1, set2);
+
+
+s.create(set1, set2);
+s.difference_1(set1, set2);
+
+s.create(set1, set2);
+s.difference_2(set1, set2);
+
+
+
+
+
+
+
+	
+	
+	
+}
+}

@@ -1,0 +1,42 @@
+package corejavaassignment;
+
+import java.util.Arrays;
+import java.util.Set;
+
+public class set {
+	void union(Set<String> set1,Set<String> set2)
+	{
+		set1.addAll(set2);
+		System.out.println("Union= "+set1);
+	}
+	void intersection(Set<String> set1,Set<String> set2)
+	{
+		set1.retainAll(set2);
+		System.out.println("Intersection= "+set1);
+	}
+	void difference_1(Set<String> set1,Set<String> set2)
+	{
+		set1.removeAll(set2);
+		System.out.println("Difference in set1= "+set1);
+	}
+	void difference_2(Set<String> set1,Set<String> set2)
+	{
+		set2.removeAll(set1);
+		System.out.println("Difference in set2= "+set2);
+	}
+	
+	void create(Set<String>set1, Set<String>set2) {
+		String[] s1= {"micromax","apple","nokia","lg","samsung"};
+		String[] s2= {"sony","apple","spice","nokia","htc"};
+		set1.addAll(Arrays.asList(s1));
+		set2.addAll(Arrays.asList(s2));
+			}
+	void display(Set<String>set1, Set<String> set2)
+	{
+		System.out.println("set1 " + set1);
+		System.out.println("set2 "+set2);
+	}
+
+
+
+}

@@ -1,0 +1,43 @@
+package oops;
+
+import java.util.Date;
+
+public class GeneralInformation {
+ int UserId;
+	 String userName;
+	boolean gender;
+	Date dateOfBirth;
+	public GeneralInformation(int UserId,String userName,boolean gender,Date dateOfBirth)
+	{
+		System.out.println("userid is " + UserId);
+		System.out.println("username is " + userName);
+		System.out.println("gender is " + gender);
+		System.out.println("dateofbirth is" + dateOfBirth);
+	}
+	
+	public int getUserId() {
+		return UserId;
+	}
+	public void setUserId(int userId) {
+		UserId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public boolean isGender() {
+		return gender;
+	}
+	public void setGender(boolean gender) {
+		this.gender = gender;
+	}
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+}

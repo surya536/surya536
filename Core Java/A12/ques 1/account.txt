@@ -1,0 +1,62 @@
+package corejavaassignment;
+
+public class account{
+
+	int accountId;
+	String name;
+	double accountBalance;
+	
+	public account() {
+		super();
+	
+	}
+
+	public boolean equals(account ac)
+	{
+		boolean isEqual=false;
+		if(ac!=null && ac instanceof account)
+			isEqual=(this.accountBalance==ac.accountBalance);
+	
+		return isEqual;
+		
+	}
+	public int getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getAccountBalance() {
+		return accountBalance;
+	}
+
+	public void setAccountBalance(double accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
+	public account(int accountId, String name, double accountBalance) {
+		super();
+		this.accountId = accountId;
+		this.name = name;
+		this.accountBalance = accountBalance;
+	}
+	@Override
+	public String toString() {
+        
+        return "account id: "+this.accountId+"name:  "+this.name+"account balance: "+this.accountBalance;
+    }
+
+	
+
+}
+

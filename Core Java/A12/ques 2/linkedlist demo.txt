@@ -1,0 +1,73 @@
+package corejavaassignment;
+
+import java.util.*;
+
+public class linkedlistdemo {
+	LinkedList <Integer> list1; 
+	LinkedList <Integer> list2; 
+	LinkedList <Integer> resultlist =new LinkedList<Integer>();
+	
+	
+	linkedlistdemo()
+	{
+		list1 =new LinkedList<Integer>();
+		list2 =new LinkedList<Integer>();
+	}
+	
+	void createlist1()
+	{
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
+		list1.add(40);
+	}
+	void createlist2()
+	{
+		list2.add(10);
+		list2.add(12);
+		list2.add(40);
+		list2.add(50);
+		list2.add(60);
+	}
+	boolean checkequality()
+	{
+		if(list1.equals(list2))
+		return true;
+		else
+			return false;
+		
+	}
+	void mergelist()
+	{
+		if(!(list1.equals(list2)))
+		{
+			for(Integer ele:list1)
+				resultlist.add(ele);
+		for(Integer ele:list2)
+		{
+			if(!resultlist.contains(ele))
+				resultlist.add(ele);
+		}
+		}	
+	}
+	void displaylist(boolean flag)
+	{
+		if(flag)
+		{
+			System.out.println("list 1.......");
+			System.out.println(list1);	
+		}
+		else
+		{   
+			mergelist();
+			System.out.println("resultlist......");
+			ListIterator<Integer> li=resultlist.listIterator();
+			while(li.hasNext())
+				System.out.println(li.next());
+		}
+	}
+	
+	
+	
+
+}

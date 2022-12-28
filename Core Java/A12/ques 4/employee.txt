@@ -1,0 +1,56 @@
+package corejavaassignment;
+
+import java.util.*;
+
+public class employee implements Comparable {
+int employeeid;
+String name;
+int age;
+int salary;
+public employee(int employeeid, String name, int age, int salary) {
+	super();
+	this.employeeid = employeeid;
+	this.name = name;
+	this.age = age;
+	this.salary = salary;
+}
+public int getEmployeeid() {
+	return employeeid;
+}
+public void setEmployeeid(int employeeid) {
+	this.employeeid = employeeid;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getAge() {
+	return age;
+}
+public void setAge(int age) {
+	this.age = age;
+}
+public int getSalary() {
+	return salary;
+}
+public void setSalary(int salary) {
+	this.salary = salary;
+}
+@Override
+public int compareTo(Object e) {
+	// TODO Auto-generated method stub
+	int eid=((employee)e).getEmployeeid();
+	return this.employeeid-eid;
+	
+}
+public String toString() {
+    
+    return "emloyee id: "+this.employeeid+"  employee name:  "+this.name+"  age: "+this.age+" salary: "+this.salary;
+}
+
+
+	
+}
+

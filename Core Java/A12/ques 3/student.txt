@@ -1,0 +1,59 @@
+package corejavaassignment;
+
+public class studentt implements Comparable {
+	int studentid;
+	String studentName;
+	int studentScore;
+	
+	studentt()
+	{
+		
+	}
+
+	public int getStudentid() {
+		return studentid;
+	}
+
+	public void setStudentid(int studentid) {
+		this.studentid = studentid;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public int getStudentScore() {
+		return studentScore;
+	}
+
+	public void setStudentScore(int studentScore) {
+		this.studentScore = studentScore;
+	}
+
+	public studentt(int studentid, String studentName, int studentScore) {
+		super();
+		this.studentid = studentid;
+		this.studentName = studentName;
+		this.studentScore = studentScore;
+	}
+public String toString() {
+        
+        return "student id: "+this.studentid+"  student name:  "+this.studentName+"  student score: "+this.studentScore;
+    }
+
+	
+
+	@Override
+	public int compareTo(Object st) {
+		// TODO Auto-generated method stub
+		int sid=((studentt)st).getStudentid();
+		return this.studentid-sid;
+	
+	}
+	
+
+}

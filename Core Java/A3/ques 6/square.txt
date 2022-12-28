@@ -1,0 +1,19 @@
+package corejava;
+
+public class square extends rectangle {
+
+	public square(String color, double width, double height) {
+		super(color, width, height);
+		// TODO Auto-generated constructor stub
+	}
+	void draw()
+	{
+	setHeight(height);
+	setWidth(width);
+	setColor(color);
+	double area=getHeight()*getWidth();
+	System.out.println("square filled with "+getColor()+" and area = "+area);
+	
+	}
+
+}

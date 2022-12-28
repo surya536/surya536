@@ -1,0 +1,19 @@
+package corejavaassignment;
+
+import java.util.*;
+
+public class teststudent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<studentt> list=new ArrayList<studentt>();
+		studentadmin s=new studentadmin();
+		s.createStudent(list);
+		s.sortStudents(list);
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,36 @@
+package corejavaassignment;
+
+import java.util.*;
+
+public class testbank {
+	int count=0;
+	
+	
+/**
+ * @param args
+ */
+public static void main(String[] args) {
+	ArrayList<account> a=new ArrayList<account>();
+	
+	 account a1 = new  account(1001,"Kumar",25000); 
+	 account a2= new  account(1002,"Shanthi", 5000); 
+	 account a3= new  account(1003,"Kavya",25000);
+	 account a4= new  account(1004,"Shanthi", 5000); 
+account a5=new account(1005,"Dinesh",22000);
+	 bankapp b=new bankapp();
+	 
+	     
+	
+a.add(a1);
+a.add(a2);
+a.add(a3);
+a.add(a4);
+a.add(a5);
+
+System.out.println(b.checkEquality(a));
+
+
+	
+
+	}
+}

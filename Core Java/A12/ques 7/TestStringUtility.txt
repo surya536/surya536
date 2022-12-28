@@ -1,0 +1,32 @@
+package corejavaassignment;
+import java.util.*;
+public class TestStringUtility {
+
+	public static void main(String[] args) {
+		stringutility su=new stringutility();
+		String s1="pratian";
+		String s2="Bangalore";
+		String s3="SkillAssure";
+		String s4="GlobalEdify";
+		
+		
+		
+System.out.println("---------String 1------------");	
+System.out.println(su.uniqueCharacterCount(s1));
+System.out.println("---------String 2------------");	
+System.out.println(su.uniqueCharacterCount(s2));
+System.out.println("---------String 3------------");	
+System.out.println(su.uniqueCharacterCount(s3));
+System.out.println("---------String 4------------");	
+System.out.println(su.uniqueCharacterCount(s4));
+
+
+
+		
+		
+		
+		
+			
+		
+	}
+}

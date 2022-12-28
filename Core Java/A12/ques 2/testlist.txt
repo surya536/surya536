@@ -1,0 +1,14 @@
+package corejavaassignment;
+
+public class testlist {
+	public static void main(String[] args) {
+		linkedlistdemo ld=new linkedlistdemo();
+		ld.createlist1();
+		ld.createlist2();
+		boolean flag=ld.checkequality();
+		ld.displaylist(flag);
+		
+		
+	}
+
+}

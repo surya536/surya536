@@ -1,0 +1,70 @@
+package corejavaassignment;
+import java.util.*;
+
+public class employeeadmin implements Comparator {
+	
+	void createlist(List<employee> elist)
+	{
+		employee e1=new employee(17873, "Meghna Tunga", 21 ,150000);
+		employee e2=new employee(17875, "Swati Suman", 21, 160000);
+		employee e3=new employee(17882, "Subhasish", 21, 250000 );
+		employee e4=new employee(17786, "Sanket Dixit", 23 ,200000);
+		employee e5=new employee(17007, "Chandra", 19, 25000 );
+		
+		elist.add(e1);
+		elist.add(e2);
+		elist.add(e3);
+		elist.add(e4);
+		elist.add(e5);
+		
+	}
+	
+	void sortlist(List<employee> elist)
+	{
+		Collections.sort(elist);
+		for(employee e:elist)
+			System.out.println(e);
+	}
+	
+	public static Comparator<employee> enamecomparator=new Comparator<employee>()
+			{
+		@Override
+		public int compare(employee e1, employee e2) {
+			
+			String ename1=e1.getName().toUpperCase();
+			String ename2=e2.getName().toUpperCase();
+			int age1=e1.getAge();
+			int age2=e2.getAge();
+			int esal1=e1.getSalary();
+			int esal2=e2.getSalary();
+			 if(ename1.equals(ename2) && age1==age2)
+				 return esal1-esal2;
+			 else if(ename1.equals(ename2))		
+			 return age1-age2;
+			else
+			return ename1.compareTo(ename2);
+		}
+			};
+			public static Comparator<employee> esalcomparator=new Comparator<employee>()
+			{
+				@Override
+				public int compare(employee e1, employee e2) {
+			
+			int esal1=e1.getSalary();
+			int esal2=e2.getSalary();
+			return  (esal1-esal2);
+			
+		}
+			};
+			@Override
+			public int compare(Object o1, Object o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			
+
+
+	
+
+}

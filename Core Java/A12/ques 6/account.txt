@@ -1,0 +1,46 @@
+package corejavaassignment;
+
+public class accountTree {
+	int accountId;
+	String name;
+	int balance;
+	public int getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	accountTree()
+	{
+		
+	}
+	public accountTree(int accountId, String name, int balance) {
+		super();
+		this.accountId = accountId;
+		this.name = name;
+		this.balance = balance;
+	}
+	public String toString()
+	{
+		return this.accountId+" , "+this.name+" , "+this.balance;
+	}
+	public boolean equals(Object obj)
+	{
+		return false;
+		
+	}
+	
+
+}

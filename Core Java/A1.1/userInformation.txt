@@ -1,0 +1,51 @@
+package oops;
+
+import java.util.Date;
+
+public class UserInformation extends GeneralInformation {
+	String aboutMe;
+	String relationshipStatus;
+	ContactInformation contact;
+	
+	
+	
+
+
+	public UserInformation(int userId, String userName, boolean gender, Date dateOfBirth, String aboutMe,
+			String relationshipStatus, ContactInformation contact) {
+		super(userId, userName, gender, dateOfBirth);
+		this.aboutMe = aboutMe;
+		this.relationshipStatus = relationshipStatus;
+		this.contact = contact;
+	}
+
+
+	public String getAboutMe() {
+		return aboutMe;
+	}
+
+
+	public void setAboutMe(String aboutMe) {
+		this.aboutMe = aboutMe;
+	}
+
+
+	public String getRelationshipStatus() {
+		return relationshipStatus;
+	}
+
+
+	public void setRelationshipStatus(String relationshipStatus) {
+		this.relationshipStatus = relationshipStatus;
+	}
+
+
+	public ContactInformation getContact() {
+		return contact;
+	}
+
+
+	public void setContact(ContactInformation contact) {
+		this.contact = contact;
+	}
+}

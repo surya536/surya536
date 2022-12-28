@@ -1,0 +1,37 @@
+package corejavaassignment;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.*;
+
+public class testemployee {
+
+	public static void main(String[] args) {
+		
+			employeeadmin ea=new employeeadmin();
+			ArrayList<employee> elist=new ArrayList<employee>();
+			ea.createlist(elist);
+			System.out.println("by default sorting according to employee id");
+			ea.sortlist(elist);
+			System.out.println("please enter 1 for sorting based on employee name  or enter 2 for salary based sorting");
+			Scanner sc=new Scanner(System.in);
+			int opt=sc.nextInt();
+		if(opt==1)
+			{
+				Collections.sort(elist,ea.enamecomparator);
+				for(employee e:elist)
+					System.out.println(e);
+			}
+			else if(opt==2)
+			{
+				Collections.sort(elist,ea.esalcomparator);
+				for(employee e:elist)
+					System.out.println(e);
+			}
+		
+			else
+				System.out.println("invalid input");
+			
+			
+	}
+}

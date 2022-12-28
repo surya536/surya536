@@ -1,0 +1,30 @@
+package corejava;
+
+public class testsearch {
+	public static void main(String[] args) {
+		
+		search l=new linearsearch();
+		search b=new binarysearch();
+		
+		l.addElements();
+		
+
+	if(l.searchElement(23))
+		System.out.println("linear search:  key found");
+	else
+		System.out.println("linear search : key not found");
+	
+	b.addElements();
+	
+	if(l.searchElement(23))
+		System.out.println("binary search:  key found");
+	else
+		System.out.println("binary search: key not found");
+	
+	
+		
+		
+		
+	}
+
+}
