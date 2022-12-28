@@ -1,0 +1,4 @@
+[ Set and Get methods are a pattern of data encapsulation.
+ Instead of accessing class member variables directly, you define get methods to access these variables, and set methods to modify them.]
+In accmanager1 class there is no set and get methods they are directly accessed
+but where as in accmanager2 class set and get methods are used for data encapsulation

@@ -1,0 +1,66 @@
+public class TestMain {
+	public static void main(String[] args) {
+		Employee emp1 = new Employee();
+		emp1.setEmpId("1001");
+		emp1.setName("Sanjay");
+		emp1.setBasic(15000.0);
+		emp1.setHra(12500.0);
+		emp1.setPerAllowances(30.0);
+		emp1.setRole(Roles.DEVELOPER);
+		
+		Employee emp2 = new Employee();
+		emp2.setEmpId("1231");
+		emp2.setName("Varidh");
+		emp2.setBasic(25000.0);
+		emp2.setHra(12500.0);
+		emp2.setPerAllowances(35.0);
+		emp2.setRole(Roles.SR_DEVELOPER);
+		
+		Employee emp3 = new Employee();
+		emp3.setEmpId("1661");
+		emp3.setName("Tina");
+		emp3.setBasic(12000.0);
+		emp3.setHra(10500.0);
+		emp3.setPerAllowances(30.0);
+		emp3.setRole(Roles.TEST_ENGINEER);
+		
+		Employee emp4 = new Employee();
+		emp4.setEmpId("2001");
+		emp4.setName("Vishal");
+		emp4.setBasic(45000.0);
+		emp4.setHra(15500.0);
+		emp4.setPerAllowances(40.0);
+		emp4.setRole(Roles.DESIGNER);
+		
+		Employee empArr[] = new Employee[4];
+		empArr[0] = emp1;
+		empArr[1] = emp2;
+		empArr[2] = emp3;
+		empArr[3] = emp4;
+		
+		System.out.println("Enter the Date Of Report :" );
+		String dtReport = Console.readLine();
+		
+		EmployeeReport report = new EmployeeReport();
+		report.setDtReport(dtReport);
+		report.display(empArr);
+	}		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
