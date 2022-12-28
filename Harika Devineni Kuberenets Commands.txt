@@ -1,0 +1,19 @@
+1.kubectl create -f filename->creates file
+
+2.kubectl get-> gives info about specified resources
+
+3.kubectl api-version-> It prints supported versions of api
+
+4.kubectl attach <pod> –c <container>->  This attaches things to the running container
+
+5.kubectl cluster-info-> displays the information about cluster
+
+6.kubectl config delete-cluster-> deletes specified cluster.
+
+7.kubectl config current-context-> displays the current context
+
+8.kubectl describe-> describes any particular resource
+
+9.kubectl exec-> to execute a command in the container
+
+10.kubectl llogs-> to get the logs of the container

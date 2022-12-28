@@ -1,0 +1,205 @@
+Download technologies:
+
+sprint:
+https://download.springsource.com/release/STS4/4.11.1.RELEASE/dist/e4.20/spring-tool-suite-4-4.11.1.RELEASE-e4.20.0-win32.win32.x86_64.self-extracting.jar
+java:
+https://www.oracle.com/in/java/technologies/javase/javase-jdk8-downloads.html#license-lightbox
+postgresql:
+https://sbp.enterprisedb.com/getfile.jsp?fileid=1257789&_ga=2.232493656.691961852.1631681030-921104650.1631191604
+pw:dolly
+portno:5432
+
+mysql:
+https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-web-community-8.0.26.0.msi
+pw:mysql
+
+(what sir taught github link):
+
+https://github.com/shankar-trainer/hello-world/tree/capg_sep_21
+https://writexo.com/capg21
+
+practise lab ques day1(java):
+https://p211-my.sharepoint.com/:w:/g/personal/bhargavisree_p_pratian_com/EcR580PajqdCj6gkfg1FC9YBEqR-789uuc02JCGNJHTwgg?e=x8nzlb&wdhostclicktime=1631184551300
+https://p211-my.sharepoint.com/:w:/g/personal/bhargavisree_p_pratian_com/EYu-N81xNXpNl2LaS7lV3s8BQ_bdO8ui22hCWKHzlgUKuw?rtime=ysUS_n5z2Ug
+
+recording of 14/9/21 session(constructor,getset):
+https://p211-my.sharepoint.com/:v:/g/personal/ashvita_mishra_pratian_com/ESN-Ac-WxYpLjsKMrx_fWXcBYK6NHLQ-3AIs92EdXxuOQw?e=yWjWwU&isSPOFile=1
+recording of 15/9/21(mysql)
+https://p211-my.sharepoint.com/:v:/g/personal/bharat_wahane_pratian_com/EYCBOzwhdPpDj96ZRZzR8QQBaE0QPHZw7i0vMV5VM1YRgg?e=95Jv2O&isSPOFile=1
+recording of 16/9/21
+https://p211-my.sharepoint.com/:v:/g/personal/bharat_wahane_pratian_com/EXBpELwUgXBMhqebTTp8yEUB6KYB6hN6TQSSbvugyQZp4g
+https://p211-my.sharepoint.com/:v:/g/personal/bharat_wahane_pratian_com/EWWBRvY4cwZPoRPcZeNhaJoB6aqfbR5Xp1yfmmOHM8CFfA
+recording of 20/9/21
+https://p211.sharepoint.com/sites/Capgemini-JavaAWS-Sep2021/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings%2FMeeting%20in%20%5FMentor%20Connect%5F%2D20210920%5F094317%2DMeeting%20Recording%2Emp4&parent=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings
+https://p211.sharepoint.com/sites/Capgemini-JavaAWS-Sep2021/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings%2FMeeting%20in%20%5FMentor%20Connect%5F%2D20210920%5F094317%2DMeeting%20Recording%201%2Emp4&parent=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings
+
+recording of 21/9/21
+https://p211.sharepoint.com/sites/Capgemini-JavaAWS-Sep2021/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings%2FCapgemini%20%2D%20JEE%20AWS%20%2D%20SEPT%20%2D%20Mentor%20Connect%2D20210921%5F094241%2DMeeting%20Recording%2Emp4&parent=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings
+
+https://p211.sharepoint.com/sites/Capgemini-JavaAWS-Sep2021/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings%2FCapgemini%20%2D%20JEE%20AWS%20%2D%20SEPT%20%2D%20Mentor%20Connect%20%5F20210921%5F061151%2Emp4&parent=%2Fsites%2FCapgemini%2DJavaAWS%2DSep2021%2FShared%20Documents%2FMentor%20Connect%2FRecordings
+
+day3:[TOI]
+https://p211-my.sharepoint.com/:f:/g/personal/bharat_wahane_pratian_com/EsaADzt6NydIg2mImZERVv0BgydvSPTeLuKlyIKdz-WNKw?e=FT50v9
+
+
+Tracker sheet link:
+https://p211-my.sharepoint.com/:x:/g/personal/bhargavisree_p_pratian_com/EVguMRiy3PRFv9ypoGYKXqoBrhGBKsl2BKV-CPhu97d0IQ?e=KqEppb&wdhostclicktime=1631184074211
+
+
+
+
+    Syllabus for Module -1 Assessment:
+Basic Java,
+Database -My Sql,
+Web Essentials,
+Core Java.
+Pattern for Module-1 Assessment:
+MCQ Type: 75min, with 40 Questions
+Coding Type: 3 Hrs, with 4 Questions
+
+---------------postgresql---------
+it can have only in or inout
+out is not allowed in plsql
+
+create or replace procedure helloworld()
+language plpgsql
+as
+$$
+begin
+raise info 'hello world';
+end;
+$$;
+call helloworld()
+-----inout parameter------
+create or replace procedure triple(inout x int)
+language plpgsql
+as
+$$
+begin
+x:=x*3;
+end;
+$$;
+------calling (inout parameter)
+do $$
+declare myvar int:=5;
+begin
+call triple(myvar);
+raise notice'result is %',myvar;
+end;
+$$;
+---in parameter-----
+create procedure sum1(in x int,in y int)
+language plpgsql
+as $$
+begin
+raise info 'sum is %',x+y;
+end;
+$$;
+-----calling in--
+
+call sum1(12,2);
+
+---inout------------------------
+create procedure sum2(in x int, in y int,inout z int)
+language plpgsql
+as $$
+begin
+z:=x+y;
+end;
+$$;
+---calling--------------------------
+do $$
+declare myvar int:=0;
+begin 
+call sum2(11,22,myvar);
+raise info 'result is %',myvar;
+end;
+$$;
+--------------------------------
+
+create procedure searchstudent(in roll1 int,inout name1 varchar)
+language plpgsql
+as $$
+begin
+select name into name1 from student where roll=roll1;
+end;
+$$;
+----calling
+do $$
+declare name varchar;
+begin
+call searchstudent(100,name);
+raise info 'result is %',name;
+end;
+$$;
+-----------------------------------mysql-----------------------------------
+
+delimiter &&
+create procedure customersearch(in id int,out name1 varchar(20),out location1 varchar(20))
+begin
+select name,location into name1,location1 from customer where cid=id;
+end &&
+delimiter ;
+
+call customersearch(1,@name,@location);
+select @name,@location
+
+
+vmbox 
+https://www.virtualbox.org/
+
+ubuntu
+https://ubuntu.com/#download
+
+jenkins
+https://www.jenkins.io/doc/book/installing/windows/
+
+docker
+https://docs.docker.com/desktop/windows/install/
+
+apache tomcat
+https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.12/bin/apache-tomcat-10.0.12-windows-x64.zip
+
+
+
+
+https://tomcat.apache.org/download-90.cgi
+
+
+
+zenkins:
+Create First Admin User
+Username:	
+harikadevineni469
+Password:	
+•••••••••(dolly@469)
+Full name:	
+Harika Devineni
+E-mail address:	
+harikadevineni469@gmail.com
+
+jenkins url
+http://localhost:8080/
+
+
+
+Docker ps - to list running instance
+Docker ps - to list exited and running instance
+
+
+
+Remove instance
+Docker rm -f <containerID>
+
+
+
+Remove image
+Docker rmi -f <imageID>
+
+
+
+
+
+
+
+ 

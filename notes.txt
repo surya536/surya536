@@ -1,0 +1,81 @@
+
+
+Static variable in Java is variable which belongs to the class and initialized only once at the start of the execution. It is a variable which belongs to the class and not to object(instance ). Static variables are initialized only once, at the start of the execution. These variables will be initialized first, before the initialization of any instance variables.
+
+A static variable can be accessed directly by the class name and doesn’t need any object
+
+A static method can access only static data. It cannot access non-static data (instance variables).
+A static method can call only other static methods and can not call a non-static method from it.
+A static method can be accessed directly by the class name and doesn’t need any object
+A static method cannot refer to “this” or “super” keywords in anyway
+
+What is Interface?[abstraction]
+The interface is a blueprint that can be used to implement a class. The interface does not contain any concrete methods (methods that have code). All the methods of an interface are abstract methods.
+
+An interface cannot be instantiated. However, classes that implement interfaces can be instantiated. Interfaces never contain instance variables but, they can contain public static final variables (i.e., constant class variables)
+
+What Is Abstract Class?[sub classes]
+A class which has the abstract keyword in its declaration is called abstract class. Abstract classes should have at least one abstract method. , i.e., methods without a body. It can have multiple concrete methods.
+
+Abstract classes allow you to create blueprints for concrete classes. But the inheriting class should implement the abstract method.
+
+Abstract classes cannot be instantiated.
+
+
+Key Differences between Map and HashMap
+Some key differences between the Map and HashMap are as follows:
+
+Hashmap-class  Map-interface
+Hashmap-hold duplicate values,null key   Map-unique key pair values,no null
+
+
+The Map is an interface, and HashMap is a class of the Java collection framework.
+The Map interface can be implemented by using its implementing classes. In comparison, the HashMap class implements the Map interface.
+The Map contains unique key-pair values. But, the HashMap can hold duplicate values.
+The Map does not allow null values. But the HashMap can have one null key and multiple values.
+The Map has two implementations, which are HashMap and TreeMap. Whereas HashMap implements Map interface and extends AbstractMap class.
+
+
+exceptions:
+Checked Exception
+The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions. For example, IOException, SQLException, etc. Checked exceptions are checked at compile-time.
+
+2) Unchecked Exception
+The classes that inherit the RuntimeException are known as unchecked exceptions. For example, ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc. Unchecked exceptions are not checked at compile-time, but they are checked at runtime.
+
+
+
+
+
+
+
+
+collections:
+
+
+
+limitations of arrays:
+1.fixed in size
+2.only homogeneous data
+3. no underlying datastructures(so no predefined methods)
+
+so collections
+1.growable in nature
+2.heterogeneous,homogeneous
+3. every collection class is implemented on some standard data structure.
+
+if size is known prior it is better to go for arrays concept because collection performance wise lower
+arrays can hold both primitives,objects where as collections only hold objects
+
+
+if we want duplicate  values-list
+not want duplicate-set
+complex structure-map
+
+entryset-both keys,values
+keyset-only keys
+values-only values
+
+
+
+
