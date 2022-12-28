@@ -1,0 +1,30 @@
+class SpeedInvalidException extends Exception{
+public SpeedInvalidException(String s) {
+super(s);
+}
+}
+class Speed{
+String speed;
+}
+class SpeedImplementation {
+public String setSpeed(Speed s,int spd) {
+try {
+if(spd<30 || spd>90) {
+throw new SpeedInvalidException("SpeedInvalidException");
+}else {
+s.speed="Valid Speed";}
+}catch(SpeedInvalidException se) {
+s.speed="Invalid Speed";
+return "SpeedInvalidException";
+}
+return s.speed;
+}
+}
+class Main {
+public static void main(String[] args)throws Exception {
+// TODO Auto-generated method stub
+Speed s=new Speed();
+SpeedImplementation si=new SpeedImplementation();
+System.out.println(si.setSpeed(s,60));
+}
+}

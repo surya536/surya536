@@ -1,0 +1,23 @@
+public class BMI {
+public float returnWeight(String str) {
+str=str.replace('-', '.');
+String [] arrstr=str.split("@");
+String weight=arrstr[0];
+System.out.println("Weight="+weight);
+return 0.0f;
+}
+public float returnHeight(String str) {
+str=str.replace('-','.');
+String [] arrstr=str.split("@");
+String height=arrstr[1];
+System.out.println("Height="+height);
+return 0.0f;
+}
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+String str="68-45@1-78";
+BMI b=new BMI();
+b.returnWeight(str);
+b.returnHeight(str);
+}
+}

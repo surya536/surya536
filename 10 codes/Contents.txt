@@ -1,0 +1,10 @@
+1.Employee Info		Pg 2
+2.BMI			Pg 5
+3.Batch Number Check	Pg 8
+4.Scholarship		Pg 12
+5.Age to Drink		Pg 22
+6.String manipulation	Pg 24
+7.Age Gender		Pg 25
+8.Split and reverse	Pg 28
+9.Speed			Pg 30
+10.Contract		Pg 32

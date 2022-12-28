@@ -1,0 +1,71 @@
+import java.util.List;
+import java.util.Arrays;
+import java.util.Iterator;
+class Product {
+private int id;
+private String name;
+private double price;
+public Product (int id,String name,double price) {
+this.id=id;
+this.name=name;
+this.price=price;
+}
+public int getId() {
+return id;
+}
+public void setId(int id) {
+this.id=id;
+}
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name=name;
+}
+public double getPrice() {
+return price;
+}
+public void setPrice(double price) {
+this.price=price;
+}
+@Override
+public String toString() {
+return "Product {id=" + id + ", name=" + name + ", price=" + price + "}";
+}
+}
+class Implementation{
+public long getProductCount(List<Product>list,String productName) {
+long count=0L;
+Iterator<Product>itr=list.iterator();
+while(itr.hasNext()) {
+Product i=itr.next();
+if(i.getName().equals(productName)) {
+count++;
+}
+}
+return count;
+}
+public Product getModelDetails (List<Product>list,String productName,int id) {
+Iterator<Product>itr=list.iterator();
+while(itr.hasNext()) {
+Product i=itr.next();
+if(i.getName().equals(productName)||i.getId()==id) {
+return i;
+}
+}
+return null;
+}
+}
+class Check{
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+Product pr1=new Product(1,"jade",44.9);
+Product pr2=new Product(2,"jane",25.50);
+Product pr3=new Product(3,"Bandeja Paisa",35.4);
+Product pr4=new Product(4,"tortilla",15.0);
+List<Product> products=Arrays.asList(pr1,pr2,pr3,pr4);
+Implementation im=new Implementation();
+System.out.println(im.getProductCount(products, "tortilla"));
+System.out.println(im.getModelDetails(products, "tortilla", 4));
+}
+}

@@ -1,0 +1,81 @@
+import java.util.Scanner;
+import java.util.regex.*;
+class TransactionParty {
+    String seller;
+    String buyer;
+	public TransactionParty(String seller, String buyer) {
+		super();
+		this.seller = seller;
+		this.buyer = buyer;
+	}
+    
+
+}
+
+class Receipt{
+    TransactionParty transactionParty;
+    String productsQR;
+	public Receipt(TransactionParty transactionParty, String productsQR) {
+		super();
+		this.transactionParty = transactionParty;
+		this.productsQR = productsQR;
+	}
+    
+}
+
+
+class GenerateReceipt{
+    public int verifyParty(Receipt r){
+    	String regex ="^[a-zA-Z][a-zA-Z]+[\\s][a-zA-Z]*['-]*[a-zA-Z]+$";
+    	Pattern pattern = Pattern.compile(regex);
+    	Matcher matcher1 = pattern.matcher(r.transactionParty.buyer);
+		Matcher matcher2 = pattern.matcher(r.transactionParty.seller);
+		boolean b1 = matcher1.matches();
+		boolean b2 = matcher2.matches();
+		if((b1&b2)==true) {
+			return 2;
+		}
+		else if((b1|b2)==true) {
+			return 1;
+		}
+    	return 0;
+    }
+    public String calcGST(Receipt r){
+    	String inputString = r.productsQR;
+    	String ratePriceArray[] = inputString.split("@");
+    	
+    	int sumOfAll =0;
+    	for(String current: ratePriceArray) {
+    		String splitIndividual[] = current.split(",");
+    		String Rate = splitIndividual[0];
+    		String Quantity= splitIndividual[1];
+    		
+    		int rate = Integer.parseInt(Rate);
+    		int quantity = Integer.parseInt(Quantity);
+    		
+    		sumOfAll = sumOfAll +rate * quantity ;
+    	}
+    	
+    	int GST = (sumOfAll * 12/100);
+    	
+    	String s=Integer.toString(GST);
+    	return s;
+    }
+    
+}
+public class ValidatingUser {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String seller = sc.nextLine();
+		String buyer = sc.nextLine();
+		String productQR = sc.nextLine();
+		TransactionParty t1 = new TransactionParty(seller,buyer);
+		Receipt r1 = new Receipt(t1,productQR);
+		GenerateReceipt g1 = new GenerateReceipt();
+		System.out.println(g1.verifyParty(r1));
+		System.out.println(g1.calcGST(r1));
+		sc.close();
+	}
+
+}

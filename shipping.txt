@@ -1,0 +1,68 @@
+class SamePlaceException extends Exception{
+public SamePlaceException(String str) {
+super(str);
+}
+}
+class WeightException extends Exception{
+public WeightException(String str) {
+super(str);
+}
+}
+public class Shipping {
+String sourcePlace;
+String destinationPlace;
+int netWeight;
+int totalWeight;
+public Shipping(String sourcePlace, String destinationPlace, int netWeight, int
+totalWeight) {
+super();
+this.sourcePlace = sourcePlace;
+this.destinationPlace = destinationPlace;
+this.netWeight = netWeight;
+this.totalWeight = totalWeight;
+}
+}
+class Implementation {
+public String validator(Shipping details) throws Exception{
+if(details.sourcePlace.equals(details.destinationPlace)) {
+System.out.println("source and destination cannot be same");
+throw new SamePlaceException("source and destination cannot be
+same");
+}
+else if (details.netWeight>details.totalWeight) {
+System.out.println("net weight cannot be greater than total weight");
+throw new WeightException("net weight cannot be greater than
+total weight");
+}
+return null ;
+}
+public float totalBill(Shipping details) {
+float totalBill;
+try {
+if(validator(details) != null ) {
+throw new Exception();
+}
+else {
+System.out.println("Shipping details are valid");
+totalBill=(details.totalWeight)*5;
+System.out.println(totalBill);
+}
+}
+catch(SamePlaceException | WeightException ex){
+System.out.println(0.0);
+return 0.0f;
+}
+catch(Exception xe) {
+System.out.println(-1.0);
+return -1.0f;
+}
+return totalBill;
+}
+public static void main(String[] args) throws Exception {
+// TODO Auto-generated method stub
+Shipping data=new Shipping("Delhi","noida",9,10);
+Implementation imp=new Implementation();
+imp.validator(data);
+imp.totalBill(data);
+}
+}

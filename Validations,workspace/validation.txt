@@ -1,0 +1,43 @@
+class InvalidNameException extends Exception {
+InvalidNameException (String s){
+super(s);
+}
+}
+class WorkForce{
+String firstName;
+String lastName;
+}
+class WorkForceValidation{
+public String nameValidation(WorkForce w,String firstName,String lastName) {
+1 o
+try {
+if(firstName==" "||lastName==" ") {
+throw new NullPointerException("Entry Missing");
+}else if(firstName.length()==0||lastName.length()==0) {
+throw new StringIndexOutOfBoundsException("Index Out of
+Bound");
+}else if(firstName.charAt(0)==0-9||lastName.charAt(0)==0-9) {
+throw new InvalidNameException("First character is invalid");
+}else {
+w.firstName=firstName;
+w.lastName = lastName;
+return w.firstName+w.lastName;
+}
+}catch(NullPointerException ne) {
+return "Entry Missing";
+}catch(StringIndexOutOfBoundsException se) {
+return "Index Out of Bound";
+}
+catch(InvalidNameException ie) {
+return "First character is invalid";
+}
+}
+}
+class WorkForceDoSelect{
+public static void main(String[] args) throws InvalidNameException {
+// TODO Auto-generated method stub
+WorkForce wf=new WorkForce();
+WorkForceValidation wfv=new WorkForceValidation();
+System.out.println(wfv.nameValidation(wf,"Vivs","Daniel"));
+}
+}

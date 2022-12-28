@@ -1,0 +1,92 @@
+package com.capgemini.paper;
+import java.lang.*;
+import java.util.*;
+
+class NotEligibleException extends Exception 
+{
+	 private String message;
+	    
+	    NotEligibleException(String message)
+	    {
+	        this.message = message;
+	    }
+	    
+
+	    public String toString()
+	    {
+	        return message;
+	    }
+}
+
+class CompanyJobRepositoryT
+{
+    static String getJobPrediction(int age , String highestQualification) throws NotEligibleException
+	{
+		 if(age < 19) 
+		 {
+		     throw new NotEligibleException("You are underage for any job");
+		 }
+		 
+        if("B.E.".equals(highestQualification) || "MS".equals(highestQualification) || "PhD".equals(highestQualification)) 
+         {
+            String message = "";
+            if(age >= 21 && "B.E.".equals(highestQualification)) 
+            {
+                message = "We have openings for junior developer";
+            }
+            else if(age >= 26 && ("MS".equals(highestQualification) || "PhD".equals(highestQualification))) 
+            {
+                message = "We have openings for senior developer";
+            }
+            else 
+            {
+                message = "Sorry! we have no openings for now";
+            }
+            return message;
+        }
+        throw new NotEligibleException("We do not have any job that matches your qualifications");
+    }
+}
+
+
+public class JobAgencyTwo
+{
+    static String searchForJob(int age , String highestQualification) throws NotEligibleException
+	{
+		if(age >= 200 || age <= 0)
+			throw new NotEligibleException("The age  entered is not typical for human being");
+			
+		String message = "";
+        try
+        {
+            message = CompanyJobRepository.getJobPrediction(age, highestQualification);
+        }
+        catch(NotEligibleException ex)
+        {
+            message = ex.toString();
+        }
+        return message;
+	}
+	
+	public static void main(String[] args)
+    {
+		Scanner sc = new Scanner(System.in);
+		CompanyJobRepository c1 = new CompanyJobRepository();
+		System.out.println("Please enter age and highest qualification ");
+        int age = sc.nextInt();
+        String highestQualification = sc.next();
+       
+        try 
+        {
+            System.out.println(SorceJob.searchForJob(age, highestQualification));            
+        }
+        catch(NotEligibleException ex)
+        {
+            System.out.println(ex);
+        }
+
+        sc.close();
+	}
+
+}
+

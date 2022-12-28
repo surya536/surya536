@@ -1,0 +1,38 @@
+class Validator{
+   //Write Your Code Here..
+   public String validateCoupon(Product p) throws Exception{
+     if(name-discoutvalue)
+     throw new InvalidCouponException("invalid");
+     else
+     return "The coupon is valid";
+
+   }   
+ }
+ class Validator{
+   //Write Your Code Here..
+   public String validateCoupon(Product p) throws Exception{
+     String[] coupon = p.coupon.split("-");
+     int discount =integer.parseint(coupon[1]);
+     if (coupon[0].contentEquals(p.name)&&(discount>= 10 && discount <=25)){
+       return "valid coupon";
+     }else
+     throw new InvalidCouponException("invalid coupon");
+        }   
+        public double netPrice(Product p) throws Exception{
+          double netPrice =0;
+          try{
+            validateCoupon(p);
+            int discount = integer.parseint(p.coupon.split("-")[1]);
+            netPrice = p.price-((p.price8discount)/100);
+          }
+          catch(InvalidCouponException e){}
+          return netPrice;
+        }
+ }
+ 
+class InvalidCouponException extends Exception{
+ //Write Your Code Here..
+ public InvalidCouponException(String msg){
+   super(msg);
+ }
+}

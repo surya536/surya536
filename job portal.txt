@@ -1,0 +1,40 @@
+class Company{
+String name;
+int requiredCandidates;
+Company(String a,int b){
+this.name=a;
+this.requiredCandidates=b;
+}
+}
+class JobPortal{
+public String applyJob(Company jobData,String companyName,int num){
+if(!companyName.equals(jobData.name)){
+try{
+throw new CompanyNotFoundException("no such company found");
+}
+catch(Exception e){
+return ""+e;
+}
+}
+else if(jobData.requiredCandidates<num ){
+try{
+throw new NoVacanyFoundException("no vacancy avilable");
+}
+catch(Exception e){
+return ""+e;
+}
+}
+jobData.requiredCandidates-=num;
+return "applied successfully";
+}
+}
+class CompanyNotFoundException extends Exception{
+public CompanyNotFoundException(String a){
+super(a);
+}
+}
+class NoVacanyFoundException extends Exception{
+public NoVacanyFoundException(String a){
+super(a);
+}
+}

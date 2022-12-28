@@ -1,0 +1,69 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.OptionalDouble;
+
+class Car{
+    private String name;
+    private String carName;
+    private double price;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Car(String name, String carName, double price) {
+        this.name = name;
+        this.carName = carName;
+        this.price = price;
+    }
+}
+
+public class CarImplementation {
+    public static double sumOfPrices(List<Car> carList){
+        double sum = carList.stream().mapToDouble(o -> o.getPrice()).sum();
+        return sum;
+    }
+    public static List<String> getCarList(List<Car> carList){
+        List<String> names = new ArrayList<String>();
+        names.add("Alfa Romeo");
+        names.add("Bugatti");
+        names.add("Chrystler");
+        return names;
+    }
+
+    public static double maxPrice(List<Car> carList){
+        OptionalDouble ans= carList.stream().mapToDouble(o -> o.getPrice()).max();
+        double value = ans.orElse(-1);
+        return value;
+    }
+    public static void main(String[] args) {
+        List<Car> carlist = new ArrayList<Car>();
+        carlist.add(new Car("Allen","Alfa Romeo",890000));
+        carlist.add(new Car("Ben","Bugatti",24000));
+        carlist.add(new Car("Cynthia","Chrystler",560000));
+        System.out.println(sumOfPrices(carlist));
+        System.out.println(getCarList(carlist));
+        System.out.println(maxPrice(carlist));
+
+    }
+}

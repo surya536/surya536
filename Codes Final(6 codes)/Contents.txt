@@ -1,0 +1,6 @@
+1.Registered customer	Pg:1
+2.Beauty Parlour	Pg:6
+3.Two Person		Pg:13
+4.Phone book		Pg:14
+5.Date Month Exception	Pg:17
+6.Rail Compartment	Pg:21

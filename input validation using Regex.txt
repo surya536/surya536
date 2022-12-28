@@ -1,0 +1,37 @@
+public class InputValidationUsingRegex {
+public static void main(String[] args) {
+//create a pattern for mobile number
+String inputPatternForMobile = "^[6-9]\\d{9}";
+//create reference variable of pattern
+Pattern pattern = null;
+Matcher matcher = null;
+String validMobileNumber = "9865321540";
+pattern = Pattern.compile(inputPatternForMobile);
+matcher = pattern.matcher(validMobileNumber);
+System.out.println("9865321540 is valid mobile number? " + matcher.matches());
+String invalidMobileNumber = "5896325412";
+pattern = Pattern.compile(inputPatternForMobile);
+matcher = pattern.matcher(invalidMobileNumber);
+System.out.println("5896325412 is valid mobile number? " + matcher.matches());
+System.out.println();
+String inputPatternForName = "^[A-Za-z\\s]+$";
+String validName = "Ajay Khanna";
+pattern = Pattern.compile(inputPatternForName);
+matcher = pattern.matcher(validName);
+System.out.println("Ajay Khanna is valid name? " + matcher.matches());
+String inValidName = "$123";
+pattern = Pattern.compile(inputPatternForName);
+matcher = pattern.matcher(inValidName);
+System.out.println("$123 is valid name? " + matcher.matches());
+System.out.println();
+String inputPatternForEmail = "^[A-Za-z0-9_.]+@[A-Za-z0-9_.]+$";
+String validEmail = "kapil@capgemini.com";
+pattern = Pattern.compile(inputPatternForEmail);
+matcher = pattern.matcher(validEmail);
+System.out.println("kapil@capgemini.com is valid name? " + matcher.matches());
+String inValidEmail = "kapil";
+pattern = Pattern.compile(inputPatternForEmail);
+matcher = pattern.matcher(inValidEmail);
+System.out.println("kapil is valid name? " + matcher.matches());
+}
+}

@@ -1,0 +1,58 @@
+import java.util.*;
+import java.util.stream.Collectors;
+public class User {
+private String firstName;
+private String lastName;
+private int age;
+User(String firstName,String lastName,int age){
+this.firstName=firstName;
+this.lastName=lastName;
+this.age=age;
+}
+public String getFirstName() {
+return firstName;
+}
+public void setFirstName(String firstName) {
+this.firstName = firstName;
+}
+public String getLastName() {
+return lastName;
+}
+public void setLastName(String lastName) {
+this.lastName=lastName;
+}
+public int getAge() {
+return age;
+}
+public void setAge(int age) {
+this.age = age;
+}
+@Override
+public String toString() {
+return "{"+firstName + ", " + lastName + ", " + age+"}" ;
+}
+}
+class Implementation{
+public static List<User> filterAge(List<User> list){
+List<User>list1=list.stream()
+.filter(m->m.getAge()>40).collect(Collectors.toList());
+return list1;
+}
+public static User findYoungest(List<User> list) {
+Optional<User>list1= list.stream()
+.min(Comparator.comparing(User::getAge));
+User u=list1.get();
+return u ;
+}
+}
+class Check{
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+List<User>list=new ArrayList<>();
+list.add(new User("Scarlet","Jonson",25));
+list.add(new User("David","Beckham",45));
+Implementation im=new Implementation();
+System.out.println(im.filterAge(list));
+System.out.println(im.findYoungest(list));
+}
+}

@@ -1,0 +1,95 @@
+class Email{
+// Implement Email Class according to the specifiaction.
+	Header header;
+	String body;
+	String greetings;
+	Email(Header header, String body, String greetings){
+		this.header = header;
+		this.body = body;
+		this.greetings = greetings;
+	}
+
+
+
+}
+class Header{
+// Implemet the Header Class according to the specifiaction.
+	String from;
+	String to;
+	Header(String from, String to){
+		this.from = from;
+		this.to = to;
+
+	}
+
+}
+
+
+class EmailOperations{
+// Implemet the Three methods specified in the specified.	
+	public int emailVerify(Email e){
+
+		Pattern pattern = Pattern.compile("^[A-Za-z_][A-Za-z0-9._]+@[A-Za-z][A-Za-z0-9._]+\\.[A-Za-z]+$");
+		Matcher m1 = pattern.matcher(e.header.from);
+		Matcher m2 = pattern.matcher(e.header.to);
+		if(m1.matches() && m2.matches()){
+			return 2;
+		}
+		else if(m1.matches() || m2.matches()){
+			return 1;
+
+		}
+		return 0;
+
+	}
+
+	public String bodyEncryption(Email e){
+		/*if(e.body == null){
+			return null;
+		} */
+		StringBuffer result= new StringBuffer(); 
+		for (int i=0, len = e.body.length(); i<len; i++) 
+        { 
+			if(e.body.charAt(i) == ' '){
+				result.append(' ');
+				continue;
+			}
+			
+            if (Character.isUpperCase(e.body.charAt(i))) 
+            { 
+                char ch = (char)(((int)e.body.charAt(i) + 3 - 65) % 26 + 65); 
+                result.append(ch); 
+            } 
+            else
+            { 
+                char ch = (char)(((int)e.body.charAt(i) + 3 - 97) % 26 + 97); 
+                result.append(ch); 
+            } 
+			
+			
+        } 
+		return result.toString();
+	}
+
+
+	public String greetingMessage(Email e){
+		String name ="";
+		if(e.greetings != null && e.header.from != null){
+			 name = e.header.from.substring(0,e.header.from.indexOf("@"));
+			 return e.greetings+ " "+ name;
+
+		}
+
+		return "";
+	}
+
+
+
+}
+
+
+public class Source {
+	public static void main(String args[] ) throws Exception {
+		/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    // You can Implement your main() to check your Program.
+}

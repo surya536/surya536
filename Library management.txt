@@ -1,0 +1,83 @@
+import java.io.*;
+ import java.util.*;
+ import java.text.*;
+ import java.math.*;
+ import java.util.regex.*;
+class Book 
+{
+	String name;
+	String IFSC;
+	String author;
+	String issuedBy;
+	boolean available;
+	Book(String name,String IFSC,String author,boolean available)
+	{
+		this.name=name;
+		this.IFSC=IFSC;
+		this.author=author;
+		this.available=available;
+	}
+}
+class Library
+{
+	public String validateIFSC(Book book)throws InvalidIFSCException
+	{
+		if((book.IFSC).length()==16)
+			return "IFSC code is valid";
+		else
+			throw new InvalidIFSCException("IFSC code is invalid");
+	}
+	public String issueBook(Book book,String name)throws BookUnavailableException
+	{
+		if((book.available)==false)
+			throw new BookUnavailableException("Book is unavailable");
+		else
+			book.available=false;book.issuedBy=name;
+		    return "Book is issued successfully";
+	}
+}
+		    
+		    
+    
+class InvalidIFSCException extends Exception
+{
+	InvalidIFSCException(String str)
+	{
+		super(str);
+	}
+
+}
+class BookUnavailableException extends Exception
+{
+  BookUnavailableException(String str)
+	{
+	  super(str);
+	}
+}
+public class Source
+{
+
+    public static void main(String[] args)throws InvalidIFSCException,BookUnavailableException
+	{
+		Book data=new Book("Arthshashastra","9898121234346264","kautilya",true);
+		Library obj=new Library();
+		try
+	    {
+        String ans1=obj.validateIFSC(data);
+		System.out.println(ans1);
+		}
+		catch(InvalidIFSCException e1)
+		{
+			System.out.println(e1.getMessage());
+		}
+		try{
+		String ans2=obj.issueBook(data,"steve");
+		System.out.println(ans2);
+		}
+		catch(BookUnavailableException e2)
+		{
+			System.out.println(e2.getMessage());
+		}
+
+	}
+}

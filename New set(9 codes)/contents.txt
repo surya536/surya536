@@ -1,0 +1,9 @@
+1.What is an Age		Pg 1
+2.Add elements using condition	Pg 3
+3.List of operations		Pg 4
+4.Age				Pg 5
+5.School management system	Pg 7
+6.Set first and last name	Pg 10
+7.Sherlock needs help		Pg 13
+8.Dial my number		Pg 14
+9.BMI calculator		Pg 16

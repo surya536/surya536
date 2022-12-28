@@ -1,0 +1,92 @@
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.*;
+
+class Employee {
+    private String name;
+    private int salary;
+    
+    public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+    
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+
+	@Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("<");
+        sb.append("name: ");
+        sb.append(name);
+        sb.append(" salary: ");
+        sb.append("" + salary+">");
+        return sb.toString();
+
+    }
+}
+class EmployeeInfo{
+	
+	enum SortMethod implements Comparator<Employee> {
+        NAME(Comparator.comparing(Employee::getName)),
+
+        SALARY(Comparator.comparingInt(Employee::getSalary));
+
+        private final Comparator<Employee> comparator;
+
+        SortMethod(Comparator<Employee> comparator) {
+            this.comparator = comparator;
+        }
+
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            return comparator.compare(o1, o2);
+        }
+    };
+	public List<Employee> sort(List<Employee> emps, final SortMethod method){
+		//List<Employee> list = list.sort(Comparator.comparing(Employee::getSalary).thenComparing(Employee::getName));
+		return emps.stream().sorted(method).collect(Collectors.toList());
+	}
+	public boolean  isCharacterPresentInAllNames(Collection<Employee> entities, String character) {
+		//List<Employee> emp = new ArrayList<>();
+		
+	    boolean res = entities.stream().anyMatch((a) -> a.getName().startsWith(character));
+		return res;
+	}
+	
+}
+public class EmployeeVerification {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Employee> emps = new ArrayList<>();
+		emps.add(new Employee("Mickey", 100000));
+		emps.add(new Employee("Timmy", 50000));
+		emps.add(new Employee("Annny", 40000));
+		
+		EmployeeInfo e1 = new EmployeeInfo();
+		//System.out.println(e1.sort(emps, null));
+
+	}
+
+}

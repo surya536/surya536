@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+public class Source {
+public String listStartToEnd(ArrayList<String>list,int start,int end){
+String concat= " ";
+for(int i=start;i<=end;i++) {
+concat=concat+list.get(i);
+}
+return concat;
+}
+public ArrayList<String> addBefore(ArrayList<String>list,String p,String q){
+list.add(2, "Super Naturals");
+return list;
+}
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+ArrayList<String> tvShows=new ArrayList<>();
+tvShows.add("Breaking bad");
+tvShows.add("GOT");
+tvShows.add("Friends");
+tvShows.add("Prison break");
+Source a=new Source();
+System.out.println(a.listStartToEnd(tvShows, 0, 2));
+System.out.println(a.addBefore(tvShows, "Friends", "Super natural"))
+}
+}
