@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class checkfibonacci {
+	
+	static boolean PerfectSquare(int x)
+    {
+        int s = (int) Math.sqrt(x);
+        return (s*s == x);
+    }
+      
+  
+    static boolean isFibonacci(int n)
+    {
+        return PerfectSquare(5*n*n + 4) ||
+               PerfectSquare(5*n*n - 4);
+    }
+    public static void main (String args[])
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter num");
+	int n=sc.nextInt();
+	if(isFibonacci(n))
+		System.out.println(n+ " is a fibonacci number");
+	else
+		System.out.println(n+ " is not a fibonacci number");
+		
+}
+}

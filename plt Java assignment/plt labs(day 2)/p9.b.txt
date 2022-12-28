@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ques15 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter limit");
+		int n=sc.nextInt();
+		int a=1,b=2,c,d;
+		System.out.print(a+" ");
+		System.out.print(b+" ");
+		for(int i=1;i<=n;i++)
+		{
+			c=a+3;
+			
+			d=b+4;
+			System.out.print(c+" ");
+	        System.out.print(d+" ");
+			a=c;
+			b=d;
+
+		}
+
+	}
+
+}

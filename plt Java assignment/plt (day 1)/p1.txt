@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Simpleinterest {
+public static void main(String args[])
+{
+	float p,t,r;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter prinicipal amount");
+	p=sc.nextFloat();
+	System.out.println("enter time");
+	t=sc.nextFloat();
+	System.out.println("enter rate");
+	r=sc.nextFloat();
+	float i;
+	i=(p*t*r)/100;
+	System.out.printf("interest is %f",i);
+	sc.close();
+}
+}

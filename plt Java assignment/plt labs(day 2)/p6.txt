@@ -1,0 +1,44 @@
+
+import java.util.Scanner;
+
+public class digittoword {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter number");
+		int num=sc.nextInt();
+		int r,s,n=0;
+	
+		while(num!=0)
+		{
+			s=num%10;
+			n=(n*10)+s;
+			num=num/10;
+		}
+		while(n!=0) {
+			r=n%10;
+			if(r==1)
+				System.out.print("one ");
+			else if(r==2)
+				System.out.print("two ");
+			else if(r==3)
+				System.out.print("three ");
+			else if(r==4)
+				System.out.print("four ");
+			else if(r==5)
+				System.out.print("five ");
+			else if(r==6)
+				System.out.print("six ");
+			else if(r==7)
+				System.out.print("seven ");
+			else if(r==8)
+				System.out.print("eight ");
+			else if(r==9)
+				System.out.print("nine ");
+			else if(r==0)
+				System.out.print("zero ");
+			n=n/10;
+		}
+	}
+
+}

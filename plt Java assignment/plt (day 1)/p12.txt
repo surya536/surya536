@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+
+public class ques12 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Enter the value of N");
+		Scanner obj = new Scanner(System.in);
+		int N =obj.nextInt();
+		obj.close();
+		
+		int seq0=1,seq1=4,seq2=7,counter=0;
+		
+		System.out.print("1 4 7 ");
+		while((( seq2>(seq0>seq1?seq0:seq1)?seq2:(seq0>seq1?seq0:seq1))<=N) ) {
+			if(counter%3==0) {
+				seq0 += seq1 + seq2;
+				if(seq0<=N) {
+				System.out.print(seq0+" ");
+				counter++;
+				}
+			}
+			else if(counter %3 == 1) {
+				seq1 += seq0 + seq2;
+				if(seq1<=N) {
+					System.out.print(seq1+" ");
+					counter++;
+					}
+			else {  
+				seq2 += seq0 + seq1; 
+				if(seq2<=N) {
+					System.out.print(seq2+" ");
+					counter++;
+					}
+			}
+		}
+	}
+	}
+}

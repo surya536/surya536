@@ -1,0 +1,22 @@
+public class ques8 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,count=1;
+		for(i=1;;i++)
+		{
+			
+			if(60*i%7==1)
+			{
+				if(count==1 || count==2 || count==4)
+		System.out.println(60*i);
+				count++;
+				
+				if(count > 4)
+				break;
+			}
+		}
+
+	}
+
+}

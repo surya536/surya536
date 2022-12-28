@@ -1,0 +1,63 @@
+package java8;
+
+import java.util.Scanner;
+
+public class empsal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the empname");
+		String s=sc.nextLine();
+		System.out.println("enter the empid");
+		int n=sc.nextInt();
+	System.out.println("enter the basic and special allowances");
+		int b=sc.nextInt();
+		int s1=sc.nextInt();
+		System.out.println("enter the bonus percentage");
+		float bo=sc.nextFloat();
+		System.out.println("do u have any monthly tax saving statements");
+		String s2=sc.next();
+		double msal=b+s1;
+		double bsal=(msal*bo)/100;
+		double agsal=msal+bsal;
+		double tax;
+		double ansal;
+		String h="y";
+		if(s2.equals(h) && agsal<=400000)
+		{
+		ansal=agsal;
+		System.out.println("annual net salary is "+ansal);
+		}
+		else
+		{
+		if (agsal>=250000 && agsal<=500000)
+			{
+			tax=(agsal*5)/100;
+			System.out.println("tax payable amount is "+ tax);
+			ansal=agsal-tax;
+			System.out.println("annual net salary is "+ ansal);
+			}
+		else if(agsal>=500000 && agsal<=1000000)
+		{
+		tax=(agsal*20)/100;
+		System.out.println("tax payable amount is "+ tax);
+		ansal=agsal-tax;
+		System.out.println("annual net salary is "+ ansal);
+		}
+		else if(agsal>=1000000 )
+		{
+		tax=(agsal*30)/100;
+		System.out.println("tax payable amount is "+ tax);
+		ansal=agsal-tax;
+		System.out.println("annual net salary is "+ ansal);
+		}
+		else
+			System.out.println("annual net salary is "+ agsal);
+		
+		}
+		
+
+	}
+
+}

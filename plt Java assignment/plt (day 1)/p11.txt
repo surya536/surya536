@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class ques11 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method 
+		Scanner sc=new Scanner(System.in);
+	String s="y";
+		String m1="card";
+		double total=0;
+		String m;
+		System.out.println("how would u like to make the paayment cash or card ?");
+		 m=sc.next();
+		double finaltotal=0;
+			
+			double discount;
+			for(;s.equals("y");)
+			{
+			System.out.println("enter item code,description,quantity,price");
+			int n1=sc.nextInt();
+			String d=sc.next();
+			int q=sc.nextInt();
+			int p=sc.nextInt();
+			System.out.println("do u wish to add some more products yes or no");
+			 s=sc.next();
+			total=total+(p*q);
+		    }
+			if(total>=10000)
+				
+			{
+				discount=(total/100)*10;
+				finaltotal=total-discount;
+				
+			}
+			
+			else if(total<=1000 && m.equals(m1))
+				{
+				double charges=total*0.25;
+				finaltotal=total+charges;
+				}
+			else
+				finaltotal=total;
+			
+		
+			System.out.println("finaltotal is " +" Rs" +finaltotal );
+		}
+			
+	
+		
+
+	}

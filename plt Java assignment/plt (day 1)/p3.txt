@@ -1,0 +1,29 @@
+import java.util.*;
+public class student {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter name");
+		String name=sc.nextLine();
+		System.out.println("enter  3 subject marks");
+		int s1,s2,s3;
+		s1=sc.nextInt();
+		s2=sc.nextInt();
+		s3=sc.nextInt();
+		float avg,total;
+		total=s1+s2+s3;
+		avg=total/3;
+		if(avg>=60 && avg<=100)
+			System.out.println("1st class");
+		else if(avg>=50 && avg<=59)
+			System.out.println("2nd class");
+		else if(avg>=35 && avg<=49)
+			System.out.println("pass");
+		else
+			System.out.println("fail");
+		
+	}
+
+}

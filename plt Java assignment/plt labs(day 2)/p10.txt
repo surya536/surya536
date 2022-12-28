@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class powerb {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("enter number");
+		Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	System.out.println("enter power in binary");
+	
+int pb=sc.nextInt();
+
+int r,d=0,i=0;
+while(pb!=0)
+{
+	r=pb%10;
+	d=(int) (d+r*Math.pow(2, i));
+	pb=pb/10;
+	i++;
+}
+int k=1;
+for(int i1=1;i1<=d;i1++)
+	k=k*n;
+System.out.println(k);
+	}
+
+}

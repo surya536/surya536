@@ -1,0 +1,27 @@
+
+import java.util.Scanner;
+
+public class fact {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter number");
+		int n=sc.nextInt();
+		int fact=1;
+		if(n==0)
+			System.out.println("factorial is 1");
+		else if(n<1)
+			System.out.println("factorial of -ve numbers is invalid");
+		else
+		{
+			for(int i=1;i<=n;i++)
+				fact=fact*i;
+			System.out.println(fact);
+		}
+		
+		
+
+	}
+
+}

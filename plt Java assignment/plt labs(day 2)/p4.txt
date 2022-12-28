@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class decimaltobinary {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter decimal num");
+		int d=sc.nextInt();
+		  int b[] = new int[40];    
+		     int i = 0;    
+		     while(d> 0){    
+		       b[i++] = d%2;    
+		       d = d/2;    
+		     }    
+		     System.out.println("binary num is");
+		     for(int j = i-1;j >= 0;j--){    
+		       System.out.print(b[j]);    
+		     }    
+		System.out.println();
+	}
+
+}
