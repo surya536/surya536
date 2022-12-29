@@ -1,0 +1,47 @@
+File Handling
+
+1 Write a program to create a text file in the path c:\java\abc.txt and check
+whether that file is exists. Using the command exists(), isDirectory(),
+isFile(), getName() and getAbsolutePath().
+
+2 Write a program to rename the given file, after renaming the file delete
+the renamed file. (Accept the file name using command line arguments.) 
+
+3. Write a program to create a file and write data into it using the methods
+OutputStream class. 
+
+4. Write a program to get the input from the user and store it into file.
+Using Reader and Writer file. 
+
+
+Threads
+
+1. lab1: Date Display
+This exercise explores the basics of Threads: creating and starting a Thread, sleeping and using the java.lang.Runnable interface. This lab has three exercises. The result of each exercise is that a date (java.util.Date) is displayed on the console every two seconds.
+
+Exercise 1 - Every program has a Thread
+You will not create a Thread since the JVM always creates a main Thread for you.
+
+Create the class DateDisplayer with a public static void main(String args[]) method to which you will add the code for the next steps. You need to add import java.util.Date to be able to use a Date object.
+Create an endless loop with while(true).
+In the loop body two things should be done: printing the current date on the console (with System.out.println()) and sleeping for two seconds (2000 milliseconds). Hint: use Thread.sleep() within a try/catch block for catching InterruptedException.
+Try to get and display the name of the main Thread. Hint: use Thread.currentThread().
+
+Exercise 2 - Extending the Thread class
+You will create a Thread and start it.
+
+Create the class DateDisplayerThread that extends java.lang.Thread with a method public void run() Also add public static void main(String args[]) method to create and start DateDisplayerThread.
+In public void run(): create an endless loop with while(true).
+In the loop body two things should be done: printing the current date on the console (with System.out.println()) and sleeping for two seconds (2000 milliseconds). Hint: use sleep() within a try/catch block for catching InterruptedException.
+Try to get and display the name of the DateDisplayerThread. Hint: use getName().
+In the main() method: create a DateDisplayerThread and start it by calling start().
+
+Exercise 3 - Using the Runnable interface
+You will create a class that implements the Runnable interface.
+
+Create the class DateDisplayerRunnable that implements java.lang.Runnable. You should thus add public void run() Also add public static void main(String args[]) method to create DateDisplayerRunnable and start it with a thread.
+The public void run() method is the same as in the previous exercise except that sleep() won't work. See the first exercise how to do this.
+Try to get and display the name of the thread. Hint: See the first exercise how to do this.
+In the main() method: create a DateDisplayerRunnable object and a Thread object that takes the DateDisplayerRunnable in its constructor.
+Start the Thread by calling start() of the Thread object.
+Alternative: instead of creating and starting the Thread within main() you can also do this within the constructor of DateDisplayerRunnable.

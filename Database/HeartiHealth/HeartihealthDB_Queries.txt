@@ -1,0 +1,43 @@
+ Hearthealth DB
+
+-- Get all the predictions 
+
+
+-- Get all the predictions for the day
+
+-- Get all the predictions for the day and sort it
+-- based on highest percentage of probability at the top
+
+-- Get all the unique cities
+
+-- Get all the members who are from a city - 'Burgos'
+
+
+-- Get all the members who are from 'flora' city
+
+
+-- Get the total number of bloodtests done for Aisha
+
+
+-- Get the xray details of Ajay whose cardio was done on 26th of Jan 2019
+
+-- Create a Stored Procedure to get the details (firstname, lastname, age) of the members by just passing the member_id as a parameter.
+
+
+-- Create a Stored Procedure to insert the details of the any new member by just passing the details as parameters.
+
+-- Create a Stored Procedure to get the X-ray report of the patient, based on their name and the date of cardiac test done.
+
+-- Create a Stored procedure which would return the count of the patients based on the data stored in the database. Pass the parameter to get count of patients who are predicted or who are safe from getting a heart attack.
+
+-- Write a stored procedure to create a memberinfo
+-- Create a stored procedure to add member address
+-- Get all the members who are from city burgos, flora and 
+-- Get the total number of bloodtests done for aberson
+-- Get all address details for member ID M304
+-- Get all xray details for cardio id cid 122
+-- Create a stored procedure to get member name of member_id - M304
+-- Create a stored procedure to get city name of member_id - M304
+
+
+

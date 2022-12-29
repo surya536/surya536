@@ -1,0 +1,97 @@
+-- 1. get the firstName, lastname, jobtitle for all employees
+
+/*2. Print the products from highest to lowerst buyprice*/
+
+
+/*3. Print lastname , firstname from customers in DESC order
+of their Last Name and ASC Order in First name from Customers*/
+
+
+/*4. Print the orders which is than 150 from orderdetails
+Order it from highest to lowest in price*/
+
+
+/*5. Print Firstname, lastname, jobtitle of Emp
+whose jobtitle is President*/
+
+
+/*6. Print Firstname, lastname, jobtitle of Emp
+whose jobtitle is Sales Rep OR office code is 1
+and Order it by the office code and job title*/
+
+
+/*7. List employees who locate in offices whose office code is 
+from 1 to 3*/
+
+
+/*8. Find all Emp who reports to Patterson (lastname) who is
+a 'Sales Manager (APAC)' 
+Use sub query*/
+
+
+/*9. List customers whose contactLast name ends with 'el'*/
+
+
+/*10. List the employees who are located in offices 
+in NYC and LONDON*/
+
+
+/*11. List emp who does not report to anyone*/
+SELECT * from employees where reportsTo IS NULL;
+
+/*12. Find all emp who are not Sales Rep*/
+
+
+/*13. Print all the unique lastname from the emp table*/
+
+
+/*14. Get unique states from customer*/
+
+
+/*15. Get all the count of orders based on the order status*/
+
+
+/*16. List the different order status present*/
+
+
+/*17. Print the OrderNumber and the total amount of each order
+Total amt= QtyOrdered * priceEach*/
+
+/*18. Print the year and the count of orders
+Ex: 
+YEAR  Count
+2003  111
+*/
+
+
+/*19. List customers who has the maximum payment*/
+
+/*20. List customers whose payments are greater than the average payment*/
+
+/*21. List customers who have not placed any orders*/
+
+/*22. Find the maximum, minimum and average number of items in sale order*/
+
+
+/*23. Find sales orders whose total values are greater than 60k
+Output: 
+OrderNumber   totoal
+10120          3423.85*/
+
+/*24. Update the email id of Mary Patterson to new email
+mary.patterso@classicmodelcars.com*/
+
+
+/*25. Update the domain parts of emails of all Sales Rep with office code 6 with
+@skillassure.org*/
+
+
+/*26. Get Order numbers, the number of items sold per order, and 
+total sales for each from the orderdetails table*/
+
+/*27. Get orders that have total amounts greater than 1500 and 
+contain more than 600 items using Having clause*/
+
+
+
+
